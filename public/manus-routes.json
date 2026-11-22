@@ -1,0 +1,1 @@
+{"routes":[{"path":"/","title":"CineMitra Home"},{"path":"/browse","title":"Browse Catalog"},{"path":"/watch/:id","title":"Watch Video"},{"path":"/watchlist","title":"Watchlist"},{"path":"/admin/*","title":"Admin Dashboard"}]}

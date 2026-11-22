@@ -1,0 +1,21 @@
+# Render.com blueprint (New + > Blueprint). A disk is needed so admin data survives redeploys (paid plan).
+services:
+  - type: web
+    name: cinemitra
+    runtime: node
+    buildCommand: npm install --include=dev && npm run build
+    startCommand: npm start
+    healthCheckPath: /api/health
+    envVars:
+      - key: ADMIN_PASSWORD
+        sync: false
+      - key: NDUS_TOKENS
+        sync: false
+      - key: DATA_DIR
+        value: /var/data
+      - key: PROXY_SECRET
+        generateValue: true
+    disk:
+      name: cinemitra-data
+      mountPath: /var/data
+      sizeGB: 1
